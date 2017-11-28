@@ -3,7 +3,7 @@ require_relative 'app/user_validation'
 
 use UserValidation
 
-VALID_ITEM_ADDITION = /^(@[\w\.\-_]+) (.+)/
+VALID_ITEM_ADDITION = /(.+)/
 
 HELP_RESPONSE = 'Use `/add` to add an item to the weekly order. Example: `/add almonds`'.freeze
 
@@ -14,7 +14,7 @@ INVALID_RESPONSE = 'I can\'t give you what you want as I don\'t understand. Try 
 post '/slack/command' do
   case params['text'].to_s.strip
   when 'help', '' then HELP_RESPONSE
-  when VALID_ITEM_ADDITION then CONFIRM_ADD_ITEM 
+  when VALID_ITEM_ADDITION then CONFIRM_ADD_ITEM
   else INVALID_RESPONSE
   end
 end
