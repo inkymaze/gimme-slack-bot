@@ -5,11 +5,11 @@ use UserValidation
 
 VALID_ITEM_ADDITION = /(.+)/
 
-HELP_RESPONSE = 'Use `/add` to add an item to the weekly order. Example: `/add almonds`'.freeze
+HELP_RESPONSE = 'Use `/gimme` to add an item to the weekly Gimme order. Example: `/gimme almonds`'.freeze
 
 CONFIRM_ADD_ITEM = 'You\'re item has been added to the order'.freeze
 
-INVALID_RESPONSE = 'I can\'t give you what you want as I don\'t understand. Try again like this: `/add almonds`'.freeze
+INVALID_RESPONSE = 'I can\'t give you what you want as I don\'t understand. Try again like this: `/gimme almonds`'.freeze
 
 post '/slack/command' do
   case params['text'].to_s.strip
