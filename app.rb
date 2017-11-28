@@ -14,7 +14,7 @@ INVALID_RESPONSE = 'I can\'t give you what you want as I don\'t understand. Try 
 post '/slack/command' do
   case params['text'].to_s.strip
   when 'help', '' then HELP_RESPONSE
-  when VALID_ITEM_ADDITION then OK_RESPONSE % $1
+  when VALID_ITEM_ADDITION then CONFIRM_ADD_ITEM 
   else INVALID_RESPONSE
   end
 end
