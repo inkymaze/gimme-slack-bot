@@ -1,7 +1,7 @@
 require 'sinatra'
 require_relative 'app/user_validation'
 
-user UserValidation
+use UserValidation
 
 post '/slack/command' do
   "OK"
